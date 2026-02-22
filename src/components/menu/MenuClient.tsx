@@ -141,25 +141,12 @@ export const MenuClient = ({
             {filteredProducts.length} {lang === "fa" ? "آیتم" : "items"}
           </span>
         </div>
-        <div className="relative mt-6">
-          <div
-            className="pointer-events-none absolute inset-y-0 left-0 w-8"
-            style={{
-              background: "linear-gradient(90deg,var(--color-surface),transparent)",
-            }}
-          />
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 w-8"
-            style={{
-              background: "linear-gradient(270deg,var(--color-surface),transparent)",
-            }}
-          />
-          <div className="no-scrollbar flex items-center gap-3 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 px-1">
+        <div className="mt-6 flex flex-wrap items-center gap-3">
           <button
-            className={`snap-start whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
+            className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
               activeCategory === "all"
-                ? "bg-brand text-black shadow-[0_10px_30px_rgba(255,122,0,0.35)]"
-                : "border border-brand/30 bg-card text-ink hover:-translate-y-0.5 hover:border-brand/60"
+                ? "bg-brand text-black"
+                : "border border-brand/30 bg-card text-ink"
             }`}
             onClick={() => setActiveCategory("all")}
           >
@@ -168,17 +155,16 @@ export const MenuClient = ({
           {visibleCategories.map((category) => (
             <button
               key={category.id}
-              className={`snap-start whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
+              className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
                 activeCategory === category.id
-                  ? "bg-brand text-black shadow-[0_10px_30px_rgba(255,122,0,0.35)]"
-                  : "border border-brand/30 bg-card text-ink hover:-translate-y-0.5 hover:border-brand/60"
+                  ? "bg-brand text-black"
+                  : "border border-brand/30 bg-card text-ink"
               }`}
               onClick={() => setActiveCategory(category.id)}
             >
               {lang === "fa" ? category.titleFa : category.titleEn}
             </button>
           ))}
-        </div>
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((item) => (

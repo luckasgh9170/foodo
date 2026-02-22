@@ -93,8 +93,6 @@ const i18n = {
     highlight: "پیشنهاد ویژه امروز",
     highlightTitle: "لاته وانیل",
     highlightText: "تهیه شده با دانه‌های تازه عربیکا",
-    featured: "موارد ویژه",
-    featuredTag: "منتخب‌های سرآشپز",
     allItems: "تمام آیتم‌ها",
     footerLeft: "FOODO | منوی دیجیتال رستوران و کافه",
     footerRight: "تمامی حقوق محفوظ است.",
@@ -115,8 +113,6 @@ const i18n = {
     highlight: "Today’s highlight",
     highlightTitle: "Vanilla Latte",
     highlightText: "Crafted with fresh Arabica beans",
-    featured: "Featured",
-    featuredTag: "Chef selections",
     allItems: "All items",
     footerLeft: "FOODO | Digital menu for restaurant & cafe",
     footerRight: "All rights reserved.",
@@ -135,7 +131,6 @@ const state = {
 };
 
 const categoryRow = document.getElementById("categoryRow");
-const featuredGrid = document.getElementById("featuredGrid");
 const productGrid = document.getElementById("productGrid");
 const itemsCount = document.getElementById("itemsCount");
 const searchInput = document.getElementById("searchInput");
@@ -200,26 +195,6 @@ const renderCategories = () => {
   });
 };
 
-const renderFeatured = (products) => {
-  const featured = products.filter((item) => item.tags.includes("Popular")).slice(0, 4);
-  featuredGrid.innerHTML = featured
-    .map(
-      (item) => `
-      <div class="card">
-        <div class="card-image">
-          <img src="${item.image}" alt="${item.titleEn}" />
-        </div>
-        <div class="card-body">
-          <div class="card-title">${state.lang === "fa" ? item.titleFa : item.titleEn}</div>
-          <div class="card-price">${formatPrice(item.price)}</div>
-          <div class="card-desc">${state.lang === "fa" ? item.shortDescFa : item.shortDescEn}</div>
-        </div>
-      </div>
-    `
-    )
-    .join("");
-};
-
 const renderProducts = (products) => {
   productGrid.innerHTML = products
     .map(
@@ -268,7 +243,6 @@ const render = () => {
   applyTheme();
   renderCategories();
   const filtered = filterProducts();
-  renderFeatured(filtered);
   renderProducts(filtered);
 };
 

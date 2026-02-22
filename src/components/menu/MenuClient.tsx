@@ -115,12 +115,6 @@ export const MenuClient = ({
     };
   }, [socket]);
 
-  const featured = useMemo(() => {
-    return products
-      .filter((item) => item.tags.includes("Popular") || item.tags.includes("Signature"))
-      .slice(0, 4);
-  }, [products]);
-
   const visibleCategories = useMemo(
     () =>
       categories
@@ -190,8 +184,16 @@ export const MenuClient = ({
         </div>
       </section>
 
-      <section id="menu" className="mx-auto mt-10 max-w-6xl px-4">
-        <div className="no-scrollbar flex items-center gap-3 overflow-x-auto pb-2">
+      <section id="menu" className="mx-auto mt-12 max-w-6xl px-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-semibold">
+            {lang === "fa" ? "تمام آیتم‌ها" : "All items"}
+          </h2>
+          <span className="text-sm text-muted">
+            {filteredProducts.length} {lang === "fa" ? "آیتم" : "items"}
+          </span>
+        </div>
+        <div className="no-scrollbar mt-6 flex items-center gap-3 overflow-x-auto pb-2">
           <button
             className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
               activeCategory === "all"
@@ -215,63 +217,6 @@ export const MenuClient = ({
               {lang === "fa" ? category.titleFa : category.titleEn}
             </button>
           ))}
-        </div>
-      </section>
-
-      {featured.length > 0 && (
-        <section className="mx-auto mt-12 max-w-6xl px-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold">
-              {lang === "fa" ? "موارد ویژه" : "Featured"}
-            </h2>
-            <span className="text-sm text-muted">
-              {lang === "fa"
-                ? "منتخب‌های سرآشپز"
-                : "Chef selections"}
-            </span>
-          </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {featured.map((item) => (
-              <Link
-                key={item.id}
-                href={`/product/${item.id}`}
-                className="group overflow-hidden rounded-3xl border border-brand/10 bg-[#141414] shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="relative h-44">
-                  <Image
-                    src={item.images[0] || "https://images.unsplash.com/photo-1504674900247-0877df9cc836"}
-                    alt={productTitle(item, lang)}
-                    fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">
-                      {productTitle(item, lang)}
-                    </h3>
-                    <span className="text-sm font-semibold text-brand">
-                      {formatPrice(item.price, lang)}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-muted">
-                    {productDesc(item, lang)}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <section className="mx-auto mt-12 max-w-6xl px-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold">
-            {lang === "fa" ? "تمام آیتم‌ها" : "All items"}
-          </h2>
-          <span className="text-sm text-muted">
-            {filteredProducts.length} {lang === "fa" ? "آیتم" : "items"}
-          </span>
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((item) => (

@@ -126,7 +126,7 @@ export const ProductsManager = () => {
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.3fr]">
-      <div className="rounded-3xl border border-brand/15 bg-[#141414] p-6 shadow-sm">
+      <div className="rounded-3xl border border-brand/15 bg-card p-6 shadow-sm">
         <h2 className="text-lg font-semibold">
           {editingId ? "Edit Product" : "New Product"}
         </h2>
@@ -138,7 +138,7 @@ export const ProductsManager = () => {
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, categoryId: event.target.value }))
               }
-              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
             >
               <option value="">Select category</option>
               {categories.map((category) => (
@@ -156,7 +156,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, titleFa: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
             <div>
@@ -166,7 +166,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, titleEn: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
           </div>
@@ -178,7 +178,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, shortDescFa: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
             <div>
@@ -188,7 +188,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, shortDescEn: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
           </div>
@@ -200,7 +200,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, fullDescFa: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
             <div>
@@ -210,7 +210,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, fullDescEn: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
           </div>
@@ -222,7 +222,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, ingredientsFa: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
             <div>
@@ -232,7 +232,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, ingredientsEn: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
           </div>
@@ -244,7 +244,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, allergensFa: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
             <div>
@@ -254,7 +254,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, allergensEn: event.target.value }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
           </div>
@@ -267,7 +267,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, price: Number(event.target.value) }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
             <div>
@@ -278,7 +278,7 @@ export const ProductsManager = () => {
                 onChange={(event) =>
                   setForm((prev) => ({ ...prev, sortOrder: Number(event.target.value) }))
                 }
-                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
               />
             </div>
           </div>
@@ -289,7 +289,7 @@ export const ProductsManager = () => {
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, imagesInput: event.target.value }))
               }
-              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
             />
           </div>
           <div>
@@ -299,7 +299,7 @@ export const ProductsManager = () => {
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, tagsInput: event.target.value }))
               }
-              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
             />
           </div>
           <div>
@@ -309,7 +309,7 @@ export const ProductsManager = () => {
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, model3dUrl: event.target.value }))
               }
-              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
             />
           </div>
           <div className="flex items-center gap-3">
@@ -332,7 +332,7 @@ export const ProductsManager = () => {
         </div>
       </div>
 
-      <div className="rounded-3xl border border-brand/15 bg-[#141414] p-6 shadow-sm">
+      <div className="rounded-3xl border border-brand/15 bg-card p-6 shadow-sm">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold">Products</h2>
           <button
@@ -346,7 +346,7 @@ export const ProductsManager = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col gap-3 rounded-2xl border border-brand/10 bg-[#101010] px-4 py-3 md:flex-row md:items-center md:justify-between"
+              className="flex flex-col gap-3 rounded-2xl border border-brand/10 bg-surface px-4 py-3 md:flex-row md:items-center md:justify-between"
             >
               <div>
                 <p className="text-sm font-semibold">{product.titleEn}</p>
@@ -376,3 +376,4 @@ export const ProductsManager = () => {
     </div>
   );
 };
+

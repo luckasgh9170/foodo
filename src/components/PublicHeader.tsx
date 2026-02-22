@@ -55,7 +55,7 @@ export const PublicHeader = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-brand/20 bg-[#0b0b0b]/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-brand/20 bg-surface">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
         <Link href="/" className="flex items-center gap-3">
           {settings.logoUrl ? (

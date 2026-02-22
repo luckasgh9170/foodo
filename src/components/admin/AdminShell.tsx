@@ -21,9 +21,9 @@ export const AdminShell = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0b0b] text-ink">
+    <div className="min-h-screen bg-surface text-ink">
       <div className="flex">
-        <aside className="hidden min-h-screen w-64 flex-col border-r border-brand/15 bg-[#111] px-6 py-8 lg:flex">
+        <aside className="hidden min-h-screen w-64 flex-col border-r border-brand/15 bg-card px-6 py-8 lg:flex">
           <div className="mb-10">
             <p className="text-xs uppercase text-muted">FOODO</p>
             <h1 className="text-2xl font-semibold tracking-wider">Admin</h1>
@@ -45,7 +45,7 @@ export const AdminShell = ({ children }: { children: React.ReactNode }) => {
           </nav>
         </aside>
         <div className="flex-1">
-          <header className="flex items-center justify-between border-b border-brand/15 bg-[#111] px-6 py-4">
+          <header className="flex items-center justify-between border-b border-brand/15 bg-card px-6 py-4">
             <div>
               <p className="text-sm text-muted">FOODO</p>
               <h2 className="text-lg font-semibold">Admin Panel</h2>
@@ -53,7 +53,7 @@ export const AdminShell = ({ children }: { children: React.ReactNode }) => {
             <div className="flex items-center gap-3">
               <button
                 onClick={handleLogout}
-                className="rounded-full border border-brand/30 bg-[#141414] px-4 py-2 text-sm text-ink"
+                className="rounded-full border border-brand/30 bg-card px-4 py-2 text-sm text-ink"
               >
                 Logout
               </button>

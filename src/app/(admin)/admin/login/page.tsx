@@ -42,7 +42,7 @@ export default function LoginPage() {
 
   return (
     <div className="mx-auto flex min-h-screen max-w-lg items-center px-6">
-      <div className="w-full rounded-3xl border border-brand/15 bg-[#141414] p-8 shadow-xl">
+      <div className="w-full rounded-3xl border border-brand/15 bg-card p-8 shadow-xl">
         <p className="text-sm text-muted">FOODO Admin</p>
         <h1 className="mt-2 text-2xl font-semibold">Sign in</h1>
         <p className="mt-2 text-sm text-muted">
@@ -54,7 +54,7 @@ export default function LoginPage() {
             <input
               type="email"
               {...register("email")}
-              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
             />
           </div>
           <div>
@@ -62,7 +62,7 @@ export default function LoginPage() {
             <input
               type="password"
               {...register("password")}
-              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
             />
           </div>
           {error && (

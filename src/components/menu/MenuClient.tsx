@@ -146,7 +146,7 @@ export const MenuClient = ({
 
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#1b1b1b,#0b0b0b)]">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,var(--color-surface-hi),var(--color-surface))]">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -160,14 +160,14 @@ export const MenuClient = ({
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder={lang === "fa" ? "جستجو در منو" : "Search menu"}
-                className="w-full rounded-full border border-brand/30 bg-[#141414] px-4 py-3 text-sm text-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30"
+                className="w-full rounded-full border border-brand/30 bg-card px-4 py-3 text-sm text-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30"
               />
               <select
                 value={availability}
                 onChange={(event) =>
                   setAvailability(event.target.value as "all" | "available" | "out")
                 }
-                className="rounded-full border border-brand/30 bg-[#141414] px-4 py-3 text-sm text-ink"
+                className="rounded-full border border-brand/30 bg-card px-4 py-3 text-sm text-ink"
               >
                 <option value="all">
                   {lang === "fa" ? "همه" : "All"}
@@ -198,7 +198,7 @@ export const MenuClient = ({
             className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
               activeCategory === "all"
                 ? "bg-brand text-black"
-                : "border border-brand/30 bg-[#141414] text-ink"
+                : "border border-brand/30 bg-card text-ink"
             }`}
             onClick={() => setActiveCategory("all")}
           >
@@ -210,7 +210,7 @@ export const MenuClient = ({
               className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
                 activeCategory === category.id
                   ? "bg-brand text-black"
-                  : "border border-brand/30 bg-[#141414] text-ink"
+                  : "border border-brand/30 bg-card text-ink"
               }`}
               onClick={() => setActiveCategory(category.id)}
             >
@@ -223,7 +223,7 @@ export const MenuClient = ({
             <Link
               key={item.id}
               href={`/product/${item.id}`}
-              className="group overflow-hidden rounded-3xl border border-brand/10 bg-[#141414] shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              className="group overflow-hidden rounded-3xl border border-brand/10 bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative h-44">
                 <Image

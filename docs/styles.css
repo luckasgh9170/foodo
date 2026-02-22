@@ -13,14 +13,15 @@
 
 html[data-theme="day"] {
   --primary: #ff8a1a;
-  --primary-light: #ffc180;
+  --primary-light: #ffd4a3;
   --accent: #ffb04d;
-  --ink: #f7f7f7;
-  --muted: #b3b3b3;
-  --surface: #1c1c1c;
-  --surface-hi: #2a2a2a;
-  --surface-low: #131313;
-  --card: #242424;
+  --ink: #1a1a1a;
+  --muted: #555555;
+  --surface: #ffffff;
+  --surface-hi: #fff5ea;
+  --surface-low: #ffffff;
+  --card: #ffffff;
+  color-scheme: light;
 }
 
 * {
@@ -59,7 +60,7 @@ img {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(10px);
-  background: rgba(11, 11, 11, 0.9);
+  background: var(--surface);
   border-bottom: 1px solid rgba(255, 122, 0, 0.2);
 }
 
@@ -128,13 +129,13 @@ button {
   padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid rgba(255, 122, 0, 0.4);
-  background: #141414;
+  background: var(--card);
   color: var(--ink);
 }
 
 .hero {
   padding: 60px 0;
-  background: linear-gradient(135deg, #1b1b1b, #0b0b0b);
+  background: linear-gradient(135deg, var(--surface-hi), var(--surface));
 }
 
 .hero-grid {
@@ -174,7 +175,7 @@ button {
   padding: 12px 16px;
   border-radius: 999px;
   border: 1px solid rgba(255, 122, 0, 0.3);
-  background: #141414;
+  background: var(--card);
   min-width: 200px;
   color: var(--ink);
 }
@@ -184,7 +185,7 @@ button {
 }
 
 .highlight-inner {
-  background: #141414;
+  background: var(--card);
   border-radius: 28px;
   padding: 20px;
   border: 1px solid rgba(255, 122, 0, 0.2);
@@ -238,7 +239,7 @@ button {
   padding: 8px 16px;
   border-radius: 999px;
   border: 1px solid rgba(255, 122, 0, 0.3);
-  background: #141414;
+  background: var(--card);
   font-size: 14px;
   color: var(--ink);
   white-space: nowrap;
@@ -275,7 +276,7 @@ button {
 }
 
 .card {
-  background: #141414;
+  background: var(--card);
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 122, 0, 0.15);
@@ -344,7 +345,7 @@ button {
 .site-footer {
   margin-top: 60px;
   border-top: 1px solid rgba(255, 122, 0, 0.2);
-  background: rgba(11, 11, 11, 0.9);
+  background: var(--surface);
 }
 
 .footer-row {
@@ -375,5 +376,6 @@ button {
     gap: 8px;
   }
 }
+
 
 

@@ -28,7 +28,7 @@ export default async function AdminDashboard() {
           ].map((card) => (
             <div
               key={card.label}
-              className="rounded-3xl border border-brand/15 bg-[#141414] p-6 shadow-sm"
+              className="rounded-3xl border border-brand/15 bg-card p-6 shadow-sm"
             >
               <p className="text-sm text-muted">{card.label}</p>
               <p className="mt-2 text-3xl font-semibold">{card.value}</p>

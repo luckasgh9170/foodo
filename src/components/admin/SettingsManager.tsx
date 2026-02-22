@@ -57,7 +57,7 @@ export const SettingsManager = () => {
   };
 
   return (
-    <div className="rounded-3xl border border-brand/15 bg-[#141414] p-6 shadow-sm">
+    <div className="rounded-3xl border border-brand/15 bg-card p-6 shadow-sm">
       <h2 className="text-lg font-semibold">Brand Settings</h2>
       <div className="mt-4 space-y-4">
         <div>
@@ -70,7 +70,7 @@ export const SettingsManager = () => {
                 restaurantName: event.target.value,
               }))
             }
-            className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+            className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
           />
         </div>
         <div>
@@ -80,7 +80,7 @@ export const SettingsManager = () => {
             onChange={(event) =>
               setSettings((prev) => ({ ...prev, logoUrl: event.target.value }))
             }
-            className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+            className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
           />
         </div>
         <div className="grid gap-3 md:grid-cols-2">
@@ -94,7 +94,7 @@ export const SettingsManager = () => {
                   primaryColor: event.target.value,
                 }))
               }
-              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
             />
           </div>
           <div>
@@ -107,7 +107,7 @@ export const SettingsManager = () => {
                   secondaryColor: event.target.value,
                 }))
               }
-              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
             />
           </div>
         </div>
@@ -118,7 +118,7 @@ export const SettingsManager = () => {
             onChange={(event) =>
               setSettings((prev) => ({ ...prev, seoTitle: event.target.value }))
             }
-            className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+            className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
           />
         </div>
         <div>
@@ -131,10 +131,10 @@ export const SettingsManager = () => {
                 seoDescription: event.target.value,
               }))
             }
-            className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
+            className="mt-2 w-full rounded-2xl border border-brand/30 bg-card px-4 py-3 text-ink"
           />
         </div>
-        <div className="rounded-2xl border border-brand/15 bg-[#101010] p-4 text-sm text-muted">
+        <div className="rounded-2xl border border-brand/15 bg-surface p-4 text-sm text-muted">
           Currency is locked to Iranian Toman (تومان).
         </div>
         <button
@@ -148,3 +148,4 @@ export const SettingsManager = () => {
     </div>
   );
 };
+

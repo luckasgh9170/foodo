@@ -56,3 +56,13 @@ The app uses a custom Node server (`server.js`) to enable WebSocket realtime upd
 ## Notes
 - Currency is locked to Iranian Toman (تومان)
 - When updating admin password, re-run `npm run db:seed` or update the user record manually.
+
+## GitHub Pages Demo
+A static demo is available in the `docs/` folder for quick previews.
+
+Steps:
+1. In GitHub repo settings, enable **Pages**.
+2. Source: `Deploy from a branch`
+3. Branch: `main` and folder `/docs`
+
+Then open the provided GitHub Pages URL to view the demo.

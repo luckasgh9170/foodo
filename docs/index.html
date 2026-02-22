@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOODO Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-row">
+        <div class="brand">
+          <div class="logo">F</div>
+          <div>
+            <div class="brand-name">FOODO</div>
+            <div class="brand-tag" data-i18n="brandTag">
+              رستوران و کافه
+            </div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" data-scroll="#menu" data-i18n="menu">
+            منو
+          </button>
+          <button class="solid" data-i18n="admin">ادمین</button>
+          <button id="langToggle" class="pill">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">FOODO</div>
+          <h1 data-i18n="heroTitle">منوی پریمیوم FOODO</h1>
+          <p class="subtitle" data-i18n="heroSubtitle">
+            کافه و فست‌فود با کیفیت ممتاز
+          </p>
+          <div class="search-row">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="جستجو در منو"
+              data-i18n-placeholder="searchPlaceholder"
+            />
+            <select id="availabilitySelect">
+              <option value="all" data-i18n="all">همه</option>
+              <option value="available" data-i18n="available">موجود</option>
+              <option value="out" data-i18n="outOfStock">ناموجود</option>
+            </select>
+          </div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-inner">
+            <div class="highlight-label" data-i18n="highlight">پیشنهاد ویژه امروز</div>
+            <div class="highlight-title" data-i18n="highlightTitle">لاته وانیل</div>
+            <div class="highlight-text" data-i18n="highlightText">
+              تهیه شده با دانه‌های تازه عربیکا
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=800&q=80"
+              alt="Vanilla Latte"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="menu">
+      <div class="category-row" id="categoryRow"></div>
+    </section>
+
+    <section class="container" id="featuredSection">
+      <div class="section-head">
+        <h2 data-i18n="featured">موارد ویژه</h2>
+        <span data-i18n="featuredTag">منتخب‌های سرآشپز</span>
+      </div>
+      <div class="grid two" id="featuredGrid"></div>
+    </section>
+
+    <section class="container" id="allItems">
+      <div class="section-head">
+        <h2 data-i18n="allItems">تمام آیتم‌ها</h2>
+        <span id="itemsCount">0 آیتم</span>
+      </div>
+      <div class="grid three" id="productGrid"></div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <span data-i18n="footerLeft">FOODO | منوی دیجیتال رستوران و کافه</span>
+        <span data-i18n="footerRight">تمامی حقوق محفوظ است.</span>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

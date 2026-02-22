@@ -1,0 +1,415 @@
+﻿const data = {
+  categories: [
+    { id: "cafe-hot-coffee", titleFa: "قهوه گرم", titleEn: "Hot Coffee" },
+    { id: "cafe-cold-coffee", titleFa: "قهوه سرد", titleEn: "Cold Coffee" },
+    { id: "cafe-tea-herbal", titleFa: "چای و دمنوش", titleEn: "Tea & Herbal Drinks" },
+    { id: "cafe-cold-beverages", titleFa: "نوشیدنی سرد", titleEn: "Cold Beverages" },
+    { id: "cafe-milkshakes", titleFa: "میلک‌شیک", titleEn: "Milkshakes" },
+    { id: "cafe-cakes-desserts", titleFa: "کیک و دسر", titleEn: "Cakes & Desserts" },
+    { id: "cafe-breakfast-light-meals", titleFa: "صبحانه و غذای سبک", titleEn: "Breakfast & Light Meals" },
+    { id: "fastfood-burgers", titleFa: "برگر", titleEn: "Burgers" },
+    { id: "fastfood-pizza", titleFa: "پیتزا", titleEn: "Pizza" },
+    { id: "fastfood-sandwiches-hotdogs", titleFa: "ساندویچ و هات‌داگ", titleEn: "Sandwiches & Hotdogs" },
+    { id: "fastfood-fried-chicken", titleFa: "مرغ سوخاری", titleEn: "Fried Chicken" },
+    { id: "fastfood-fries-snacks", titleFa: "سیب‌زمینی و اسنک", titleEn: "Fries & Snacks" },
+    { id: "fastfood-salads", titleFa: "سالاد", titleEn: "Salads" },
+    { id: "fastfood-sauces-addons", titleFa: "سس و افزودنی", titleEn: "Sauces & Add-ons" },
+    { id: "fastfood-soft-drinks", titleFa: "نوشابه", titleEn: "Soft Drinks" }
+  ],
+  products: [
+    {
+      id: "espresso",
+      categoryId: "cafe-hot-coffee",
+      titleFa: "اسپرسو کلاسیک",
+      titleEn: "Classic Espresso",
+      shortDescFa: "شات اسپرسو با کرمای غلیظ",
+      shortDescEn: "Single-shot espresso with rich crema",
+      price: 85000,
+      image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80",
+      tags: ["Popular"],
+      isAvailable: true
+    },
+    {
+      id: "latte",
+      categoryId: "cafe-hot-coffee",
+      titleFa: "لاته وانیل",
+      titleEn: "Vanilla Latte",
+      shortDescFa: "لاته با سیروپ وانیل",
+      shortDescEn: "Latte with vanilla syrup",
+      price: 140000,
+      image: "https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=800&q=80",
+      tags: ["Popular"],
+      isAvailable: true
+    },
+    {
+      id: "iced-latte",
+      categoryId: "cafe-cold-coffee",
+      titleFa: "آیس لاته",
+      titleEn: "Iced Latte",
+      shortDescFa: "لاته خنک با یخ",
+      shortDescEn: "Chilled latte over ice",
+      price: 150000,
+      image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80",
+      tags: ["Cold"],
+      isAvailable: true
+    },
+    {
+      id: "mint-tea",
+      categoryId: "cafe-tea-herbal",
+      titleFa: "چای سبز با نعنا",
+      titleEn: "Mint Green Tea",
+      shortDescFa: "چای سبز تازه و معطر",
+      shortDescEn: "Freshly brewed green tea with mint",
+      price: 90000,
+      image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+      tags: ["Herbal"],
+      isAvailable: true
+    },
+    {
+      id: "mojito",
+      categoryId: "cafe-cold-beverages",
+      titleFa: "موهیتو کلاسیک",
+      titleEn: "Classic Mojito",
+      shortDescFa: "نوشیدنی خنک نعنا و لیمو",
+      shortDescEn: "Mint and lime cooler",
+      price: 135000,
+      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
+      tags: ["Refreshing"],
+      isAvailable: true
+    },
+    {
+      id: "milkshake",
+      categoryId: "cafe-milkshakes",
+      titleFa: "میلک‌شیک شکلات",
+      titleEn: "Chocolate Milkshake",
+      shortDescFa: "میلک‌شیک غلیظ شکلاتی",
+      shortDescEn: "Thick chocolate shake",
+      price: 165000,
+      image: "https://images.unsplash.com/photo-1511910849309-0dffb3f9f347?auto=format&fit=crop&w=800&q=80",
+      tags: ["Sweet"],
+      isAvailable: true
+    },
+    {
+      id: "cheesecake",
+      categoryId: "cafe-cakes-desserts",
+      titleFa: "چیزکیک نیویورکی",
+      titleEn: "New York Cheesecake",
+      shortDescFa: "چیزکیک خامه‌ای کلاسیک",
+      shortDescEn: "Classic creamy cheesecake",
+      price: 190000,
+      image: "https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?auto=format&fit=crop&w=800&q=80",
+      tags: ["Dessert"],
+      isAvailable: true
+    },
+    {
+      id: "omelette",
+      categoryId: "cafe-breakfast-light-meals",
+      titleFa: "املت مدیترانه‌ای",
+      titleEn: "Mediterranean Omelette",
+      shortDescFa: "املت با سبزیجات تازه",
+      shortDescEn: "Omelette with fresh veggies",
+      price: 175000,
+      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
+      tags: ["Breakfast"],
+      isAvailable: true
+    },
+    {
+      id: "burger",
+      categoryId: "fastfood-burgers",
+      titleFa: "برگر کلاسیک",
+      titleEn: "Classic Burger",
+      shortDescFa: "گوشت تازه با پنیر و سس ویژه",
+      shortDescEn: "Fresh beef, cheese, and house sauce",
+      price: 240000,
+      image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
+      tags: ["Popular"],
+      isAvailable: true
+    },
+    {
+      id: "pizza",
+      categoryId: "fastfood-pizza",
+      titleFa: "پیتزا مارگاریتا",
+      titleEn: "Margherita Pizza",
+      shortDescFa: "پنیر موزارلا و ریحان تازه",
+      shortDescEn: "Mozzarella and fresh basil",
+      price: 310000,
+      image: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=800&q=80",
+      tags: ["Vegetarian"],
+      isAvailable: true
+    },
+    {
+      id: "hotdog",
+      categoryId: "fastfood-sandwiches-hotdogs",
+      titleFa: "هات‌داگ مخصوص",
+      titleEn: "Signature Hotdog",
+      shortDescFa: "هات‌داگ با سس مخصوص",
+      shortDescEn: "Hotdog with house sauce",
+      price: 175000,
+      image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
+      tags: ["Classic"],
+      isAvailable: false
+    },
+    {
+      id: "fried-chicken",
+      categoryId: "fastfood-fried-chicken",
+      titleFa: "مرغ سوخاری ترد",
+      titleEn: "Crispy Fried Chicken",
+      shortDescFa: "مرغ سوخاری با ادویه مخصوص",
+      shortDescEn: "Fried chicken with signature spices",
+      price: 265000,
+      image: "https://images.unsplash.com/photo-1562967916-eb82221dfb32?auto=format&fit=crop&w=800&q=80",
+      tags: ["Spicy"],
+      isAvailable: true
+    },
+    {
+      id: "chili-fries",
+      categoryId: "fastfood-fries-snacks",
+      titleFa: "سیب‌زمینی چیلی",
+      titleEn: "Chili Fries",
+      shortDescFa: "سیب‌زمینی با سس چیلی",
+      shortDescEn: "Fries with chili sauce",
+      price: 120000,
+      image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80",
+      tags: ["Spicy"],
+      isAvailable: true
+    },
+    {
+      id: "caesar",
+      categoryId: "fastfood-salads",
+      titleFa: "سالاد سزار",
+      titleEn: "Caesar Salad",
+      shortDescFa: "سالاد با سس سزار",
+      shortDescEn: "Salad with Caesar dressing",
+      price: 195000,
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
+      tags: ["Healthy"],
+      isAvailable: true
+    },
+    {
+      id: "garlic-sauce",
+      categoryId: "fastfood-sauces-addons",
+      titleFa: "سس سیر",
+      titleEn: "Garlic Sauce",
+      shortDescFa: "سس سیر خانگی",
+      shortDescEn: "House-made garlic sauce",
+      price: 45000,
+      image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80",
+      tags: ["Addon"],
+      isAvailable: true
+    },
+    {
+      id: "cola",
+      categoryId: "fastfood-soft-drinks",
+      titleFa: "نوشابه کولا",
+      titleEn: "Cola",
+      shortDescFa: "نوشابه گازدار",
+      shortDescEn: "Sparkling soft drink",
+      price: 55000,
+      image: "https://images.unsplash.com/photo-1541976076758-347942db1970?auto=format&fit=crop&w=800&q=80",
+      tags: ["Cold"],
+      isAvailable: true
+    }
+  ]
+};
+
+const i18n = {
+  fa: {
+    brandTag: "رستوران و کافه",
+    menu: "منو",
+    admin: "ادمین",
+    heroTitle: "منوی پریمیوم FOODO",
+    heroSubtitle: "کافه و فست‌فود با کیفیت ممتاز",
+    searchPlaceholder: "جستجو در منو",
+    all: "همه",
+    available: "موجود",
+    outOfStock: "ناموجود",
+    highlight: "پیشنهاد ویژه امروز",
+    highlightTitle: "لاته وانیل",
+    highlightText: "تهیه شده با دانه‌های تازه عربیکا",
+    featured: "موارد ویژه",
+    featuredTag: "منتخب‌های سرآشپز",
+    allItems: "تمام آیتم‌ها",
+    footerLeft: "FOODO | منوی دیجیتال رستوران و کافه",
+    footerRight: "تمامی حقوق محفوظ است.",
+    allCategories: "همه دسته‌ها",
+    itemsSuffix: "آیتم",
+    outBadge: "ناموجود"
+  },
+  en: {
+    brandTag: "Restaurant & Cafe",
+    menu: "Menu",
+    admin: "Admin",
+    heroTitle: "FOODO Premium Menu",
+    heroSubtitle: "Cafe and fast food with premium quality",
+    searchPlaceholder: "Search menu",
+    all: "All",
+    available: "Available",
+    outOfStock: "Out of stock",
+    highlight: "Today’s highlight",
+    highlightTitle: "Vanilla Latte",
+    highlightText: "Crafted with fresh Arabica beans",
+    featured: "Featured",
+    featuredTag: "Chef selections",
+    allItems: "All items",
+    footerLeft: "FOODO | Digital menu for restaurant & cafe",
+    footerRight: "All rights reserved.",
+    allCategories: "All categories",
+    itemsSuffix: "items",
+    outBadge: "Out of stock"
+  }
+};
+
+const state = {
+  lang: "fa",
+  category: "all",
+  query: "",
+  availability: "all"
+};
+
+const categoryRow = document.getElementById("categoryRow");
+const featuredGrid = document.getElementById("featuredGrid");
+const productGrid = document.getElementById("productGrid");
+const itemsCount = document.getElementById("itemsCount");
+const searchInput = document.getElementById("searchInput");
+const availabilitySelect = document.getElementById("availabilitySelect");
+const langToggle = document.getElementById("langToggle");
+
+const formatPrice = (value) => {
+  const formatter = new Intl.NumberFormat(state.lang === "fa" ? "fa-IR" : "en-US");
+  const currency = state.lang === "fa" ? "تومان" : "Toman";
+  return `${formatter.format(value)} ${currency}`;
+};
+
+const t = (key) => i18n[state.lang][key];
+
+const applyI18n = () => {
+  document.documentElement.lang = state.lang;
+  document.documentElement.dir = state.lang === "fa" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    el.textContent = t(el.getAttribute("data-i18n"));
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
+  });
+  langToggle.textContent = state.lang === "fa" ? "EN" : "فا";
+};
+
+const renderCategories = () => {
+  categoryRow.innerHTML = "";
+  const allButton = document.createElement("button");
+  allButton.textContent = t("allCategories");
+  allButton.className = state.category === "all" ? "active" : "";
+  allButton.addEventListener("click", () => {
+    state.category = "all";
+    render();
+  });
+  categoryRow.appendChild(allButton);
+
+  data.categories.forEach((category) => {
+    const btn = document.createElement("button");
+    btn.textContent = state.lang === "fa" ? category.titleFa : category.titleEn;
+    btn.className = state.category === category.id ? "active" : "";
+    btn.addEventListener("click", () => {
+      state.category = category.id;
+      render();
+    });
+    categoryRow.appendChild(btn);
+  });
+};
+
+const renderFeatured = (products) => {
+  const featured = products.filter((item) => item.tags.includes("Popular")).slice(0, 4);
+  featuredGrid.innerHTML = featured
+    .map(
+      (item) => `
+      <div class="card">
+        <div class="card-image">
+          <img src="${item.image}" alt="${item.titleEn}" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">${state.lang === "fa" ? item.titleFa : item.titleEn}</div>
+          <div class="card-price">${formatPrice(item.price)}</div>
+          <div class="card-desc">${state.lang === "fa" ? item.shortDescFa : item.shortDescEn}</div>
+        </div>
+      </div>
+    `
+    )
+    .join("");
+};
+
+const renderProducts = (products) => {
+  productGrid.innerHTML = products
+    .map(
+      (item) => `
+      <div class="card">
+        <div class="card-image">
+          <img src="${item.image}" alt="${item.titleEn}" />
+          ${
+            item.isAvailable
+              ? ""
+              : `<span class="badge">${t("outBadge")}</span>`
+          }
+        </div>
+        <div class="card-body">
+          <div class="card-title">${state.lang === "fa" ? item.titleFa : item.titleEn}</div>
+          <div class="card-price">${formatPrice(item.price)}</div>
+          <div class="card-desc">${state.lang === "fa" ? item.shortDescFa : item.shortDescEn}</div>
+          <div class="tags">
+            ${item.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+          </div>
+        </div>
+      </div>
+    `
+    )
+    .join("");
+
+  itemsCount.textContent = `${products.length} ${t("itemsSuffix")}`;
+};
+
+const filterProducts = () => {
+  return data.products.filter((item) => {
+    const matchesCategory = state.category === "all" || item.categoryId === state.category;
+    const title = state.lang === "fa" ? item.titleFa : item.titleEn;
+    const desc = state.lang === "fa" ? item.shortDescFa : item.shortDescEn;
+    const matchesQuery =
+      title.toLowerCase().includes(state.query) || desc.toLowerCase().includes(state.query);
+    const matchesAvailability =
+      state.availability === "all" ||
+      (state.availability === "available" ? item.isAvailable : !item.isAvailable);
+    return matchesCategory && matchesQuery && matchesAvailability;
+  });
+};
+
+const render = () => {
+  applyI18n();
+  renderCategories();
+  const filtered = filterProducts();
+  renderFeatured(filtered);
+  renderProducts(filtered);
+};
+
+searchInput.addEventListener("input", (event) => {
+  state.query = event.target.value.trim().toLowerCase();
+  render();
+});
+
+availabilitySelect.addEventListener("change", (event) => {
+  state.availability = event.target.value;
+  render();
+});
+
+langToggle.addEventListener("click", () => {
+  state.lang = state.lang === "fa" ? "en" : "fa";
+  render();
+});
+
+document.querySelectorAll("[data-scroll]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = document.querySelector(btn.getAttribute("data-scroll"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+render();

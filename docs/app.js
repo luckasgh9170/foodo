@@ -34,7 +34,7 @@
     { id: "iced-tea", categoryId: "cafe-cold-beverages", titleFa: "آیس تی", titleEn: "Iced Tea", shortDescFa: "چای سرد با طعم لیمو", shortDescEn: "Iced tea with lemon", price: 110000, image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80", tags: ["Cold"], isAvailable: true },
 
     { id: "milkshake-choc", categoryId: "cafe-milkshakes", titleFa: "میلک‌شیک شکلات", titleEn: "Chocolate Milkshake", shortDescFa: "میلک‌شیک غلیظ شکلاتی", shortDescEn: "Thick chocolate shake", price: 165000, image: "https://images.unsplash.com/photo-1511910849309-0dffb3f9f347?auto=format&fit=crop&w=800&q=80", tags: ["Sweet"], isAvailable: true },
-    { id: "milkshake-vanilla", categoryId: "cafe-milkshakes", titleFa: "میلک‌شیک وانیل", titleEn: "Vanilla Milkshake", shortDescFa: "میلک‌شیک وانیلی کلاسیک", shortDescEn: "Classic vanilla milkshake", price: 155000, image: "https://images.unsplash.com/photo-1511910849309-0dffb3f9f347?auto=format&fit=crop&w=800&q=80", tags: ["Classic"], isAvailable: true },
+    { id: "milkshake-vanilla", categoryId: "cafe-milkshakes", titleFa: "میلک‌شیک وانیل", titleEn: "Vanilla Milkshake", shortDescFa: "میلک‌شیک وانیلی کلاسیک", shortDescEn: "Classic vanilla milkshake", price: 155000, image: "https://images.unsplash.com/photo-1511910849309-f550ce710b93?auto=format&fit=crop&w=800&q=80", tags: ["Classic"], isAvailable: true },
     { id: "milkshake-straw", categoryId: "cafe-milkshakes", titleFa: "میلک‌شیک توت‌فرنگی", titleEn: "Strawberry Milkshake", shortDescFa: "میلک‌شیک با توت تازه", shortDescEn: "Milkshake with fresh strawberries", price: 160000, image: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=800&q=80", tags: ["Fruit"], isAvailable: true },
 
     { id: "cheesecake", categoryId: "cafe-cakes-desserts", titleFa: "چیزکیک نیویورکی", titleEn: "New York Cheesecake", shortDescFa: "چیزکیک خامه‌ای کلاسیک", shortDescEn: "Classic creamy cheesecake", price: 190000, image: "https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?auto=format&fit=crop&w=800&q=80", tags: ["Dessert"], isAvailable: true },
@@ -84,8 +84,6 @@ const i18n = {
     brandTag: "رستوران و کافه",
     menu: "منو",
     admin: "ادمین",
-    heroTitle: "منوی پریمیوم FOODO",
-    heroSubtitle: "کافه و فست‌فود با کیفیت ممتاز",
     highlight: "پیشنهاد ویژه امروز",
     highlightTitle: "لاته وانیل",
     highlightText: "تهیه شده با دانه‌های تازه عربیکا",
@@ -100,8 +98,6 @@ const i18n = {
     brandTag: "Restaurant & Cafe",
     menu: "Menu",
     admin: "Admin",
-    heroTitle: "FOODO Premium Menu",
-    heroSubtitle: "Cafe and fast food with premium quality",
     highlight: "Today’s highlight",
     highlightTitle: "Vanilla Latte",
     highlightText: "Crafted with fresh Arabica beans",

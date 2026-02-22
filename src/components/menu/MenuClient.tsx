@@ -4,7 +4,6 @@ import { useMemo, useState, useEffect } from "react";
 import type { Category, Product, Setting } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useSocket } from "@/components/SocketProvider";
 import { formatPrice } from "@/lib/utils";
@@ -129,25 +128,9 @@ export const MenuClient = ({
       .sort((a, b) => a.sortOrder - b.sortOrder);
   }, [products, activeCategory]);
 
-  const heroSubtitle =
-    lang === "fa"
-      ? "کافه و فست‌فود با کیفیت ممتاز"
-      : "Cafe and fast food with premium quality";
-
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,var(--color-surface-hi),var(--color-surface))]">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-sm font-semibold uppercase text-muted">FOODO</p>
-            <p className="mt-4 text-lg text-muted">{heroSubtitle}</p>
-          </motion.div>
-        </div>
-      </section>
+      <div className="mx-auto max-w-6xl px-4 pt-10" />
 
       <section id="menu" className="mx-auto mt-12 max-w-6xl px-4">
         <div className="flex items-center justify-between">

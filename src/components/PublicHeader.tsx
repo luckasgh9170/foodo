@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useSocket } from "@/components/SocketProvider";
 import { SOCKET_EVENTS } from "@/lib/constants";
@@ -79,6 +80,7 @@ export const PublicHeader = () => {
             {labels.menu}
           </Link>
           <LanguageToggle />
+          <ThemeToggle />
         </div>
       </div>
     </header>

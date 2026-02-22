@@ -10,8 +10,23 @@
   --color-ink: #f2f2f2;
   --color-muted: #a3a3a3;
   --color-surface: #0b0b0b;
+  --color-surface-hi: #1c1c1c;
+  --color-surface-low: #090909;
   --color-card: #141414;
   color-scheme: dark;
+}
+
+html[data-theme="day"] {
+  --color-primary: #ff8a1a;
+  --color-primary-dark: #d96a00;
+  --color-primary-light: #ffc180;
+  --color-accent: #ffb04d;
+  --color-ink: #f7f7f7;
+  --color-muted: #b3b3b3;
+  --color-surface: #1c1c1c;
+  --color-surface-hi: #2a2a2a;
+  --color-surface-low: #131313;
+  --color-card: #242424;
 }
 
 * {
@@ -20,7 +35,12 @@
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top left, #1c1c1c 0%, #0f0f0f 55%, #090909 100%);
+  background: radial-gradient(
+    circle at top left,
+    var(--color-surface-hi) 0%,
+    var(--color-surface) 55%,
+    var(--color-surface-low) 100%
+  );
   color: var(--color-ink);
   font-family: var(--font-latin), sans-serif;
 }

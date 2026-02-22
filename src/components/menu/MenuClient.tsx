@@ -145,8 +145,6 @@ export const MenuClient = ({
       .sort((a, b) => a.sortOrder - b.sortOrder);
   }, [products, activeCategory, query, availability, lang]);
 
-  const heroTitle =
-    lang === "fa" ? "منوی پریمیوم FOODO" : "FOODO Premium Menu";
   const heroSubtitle =
     lang === "fa"
       ? "کافه و فست‌فود با کیفیت ممتاز"
@@ -155,16 +153,13 @@ export const MenuClient = ({
   return (
     <div className="pb-16">
       <section className="relative overflow-hidden bg-[linear-gradient(135deg,#1b1b1b,#0b0b0b)]">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-[1.2fr_0.8fr]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <p className="text-sm font-semibold uppercase text-muted">FOODO</p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-              {heroTitle}
-            </h1>
             <p className="mt-4 text-lg text-muted">{heroSubtitle}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <input
@@ -190,36 +185,6 @@ export const MenuClient = ({
                   {lang === "fa" ? "ناموجود" : "Out of stock"}
                 </option>
               </select>
-            </div>
-          </motion.div>
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="absolute -right-6 top-10 h-52 w-52 rounded-full bg-brand/20 blur-3xl" />
-            <div className="rounded-3xl border border-brand/20 bg-[#141414] p-6 shadow-xl">
-              <p className="text-sm text-muted">
-                {lang === "fa" ? "پیشنهاد ویژه امروز" : "Today’s highlight"}
-              </p>
-              <h3 className="mt-3 text-2xl font-semibold">
-                {lang === "fa" ? "لاته وانیل" : "Vanilla Latte"}
-              </h3>
-              <p className="mt-2 text-sm text-muted">
-                {lang === "fa"
-                  ? "تهیه شده با دانه‌های تازه عربیکا"
-                  : "Crafted with fresh Arabica beans"}
-              </p>
-              <div className="mt-4 overflow-hidden rounded-2xl border border-brand/20">
-                <Image
-                  src="https://images.unsplash.com/photo-1517705008128-361805f42e86"
-                  alt="Vanilla Latte"
-                  width={600}
-                  height={400}
-                  className="h-40 w-full object-cover"
-                />
-              </div>
             </div>
           </motion.div>
         </div>

@@ -5,8 +5,22 @@
   --ink: #f2f2f2;
   --muted: #a3a3a3;
   --surface: #0b0b0b;
+  --surface-hi: #1c1c1c;
+  --surface-low: #090909;
   --card: #141414;
   color-scheme: dark;
+}
+
+html[data-theme="day"] {
+  --primary: #ff8a1a;
+  --primary-light: #ffc180;
+  --accent: #ffb04d;
+  --ink: #f7f7f7;
+  --muted: #b3b3b3;
+  --surface: #1c1c1c;
+  --surface-hi: #2a2a2a;
+  --surface-low: #131313;
+  --card: #242424;
 }
 
 * {
@@ -17,7 +31,7 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at top left, #1c1c1c 0%, #0f0f0f 55%, #090909 100%);
+  background: radial-gradient(circle at top left, var(--surface-hi) 0%, var(--surface) 55%, var(--surface-low) 100%);
 }
 
 html[dir="rtl"] body {
@@ -335,7 +349,10 @@ button {
 
 .footer-row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
   padding: 24px 0;
   font-size: 13px;
   color: var(--muted);
@@ -358,3 +375,5 @@ button {
     gap: 8px;
   }
 }
+
+

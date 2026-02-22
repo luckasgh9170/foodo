@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { poppins, vazirmatn } from "@/lib/fonts";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { SocketProvider } from "@/components/SocketProvider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "FOODO | Premium Restaurant & Cafe",
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className={`${poppins.variable} ${vazirmatn.variable}`}>
       <body>
-        <LanguageProvider>
-          <SocketProvider>{children}</SocketProvider>
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <SocketProvider>{children}</SocketProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

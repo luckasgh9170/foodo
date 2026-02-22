@@ -128,6 +128,7 @@ const i18n = {
 
 const state = {
   lang: "fa",
+  theme: "night",
   category: "all",
   query: "",
   availability: "all"
@@ -140,6 +141,7 @@ const itemsCount = document.getElementById("itemsCount");
 const searchInput = document.getElementById("searchInput");
 const availabilitySelect = document.getElementById("availabilitySelect");
 const langToggle = document.getElementById("langToggle");
+const themeToggle = document.getElementById("themeToggle");
 
 const formatPrice = (value) => {
   const formatter = new Intl.NumberFormat(state.lang === "fa" ? "fa-IR" : "en-US");
@@ -159,6 +161,20 @@ const applyI18n = () => {
     el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
   });
   langToggle.textContent = state.lang === "fa" ? "EN" : "فا";
+  if (themeToggle) {
+    themeToggle.textContent =
+      state.theme === "night"
+        ? state.lang === "fa"
+          ? "روز"
+          : "Day"
+        : state.lang === "fa"
+          ? "شب"
+          : "Night";
+  }
+};
+
+const applyTheme = () => {
+  document.documentElement.dataset.theme = state.theme;
 };
 
 const renderCategories = () => {
@@ -249,6 +265,7 @@ const filterProducts = () => {
 
 const render = () => {
   applyI18n();
+  applyTheme();
   renderCategories();
   const filtered = filterProducts();
   renderFeatured(filtered);
@@ -267,6 +284,11 @@ availabilitySelect.addEventListener("change", (event) => {
 
 langToggle.addEventListener("click", () => {
   state.lang = state.lang === "fa" ? "en" : "fa";
+  render();
+});
+
+themeToggle.addEventListener("click", () => {
+  state.theme = state.theme === "night" ? "day" : "night";
   render();
 });
 

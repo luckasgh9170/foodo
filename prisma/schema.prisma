@@ -1,0 +1,77 @@
+﻿// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(ADMIN)
+  createdAt    DateTime @default(now())
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  titleFa   String
+  titleEn   String
+  slug      String    @unique
+  sortOrder Int       @default(0)
+  isActive  Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  products  Product[]
+}
+
+model Product {
+  id            String   @id @default(cuid())
+  categoryId    String
+  titleFa       String
+  titleEn       String
+  shortDescFa   String
+  shortDescEn   String
+  fullDescFa    String?
+  fullDescEn    String?
+  ingredientsFa String?
+  ingredientsEn String?
+  allergensFa   String?
+  allergensEn   String?
+  price         Int
+  currency      String   @default("TOMAN")
+  images        String[] @default([])
+  model3dUrl    String?
+  tags          String[] @default([])
+  isAvailable   Boolean  @default(true)
+  sortOrder     Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  category Category @relation(fields: [categoryId], references: [id])
+
+  @@index([categoryId])
+  @@index([isAvailable])
+}
+
+model Setting {
+  id              String   @id @default("singleton")
+  restaurantName  String
+  logoUrl         String?
+  primaryColor    String   @default("#c2422c")
+  secondaryColor  String   @default("#1f6f8b")
+  seoTitle        String?
+  seoDescription  String?
+  currency        String   @default("TOMAN")
+  languageEnabled String   @default("FA_EN")
+  updatedAt       DateTime @updatedAt
+}

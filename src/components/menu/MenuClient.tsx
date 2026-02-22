@@ -29,11 +29,7 @@ export const MenuClient = ({
   const socket = useSocket();
   const [categories, setCategories] = useState<Category[]>(initialCategories);
   const [products, setProducts] = useState<Product[]>(initialProducts);
-  const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [availability, setAvailability] = useState<"all" | "available" | "out">(
-    "all"
-  );
 
   useEffect(() => {
     if (settings?.primaryColor) {
@@ -128,16 +124,10 @@ export const MenuClient = ({
       .filter((item) => {
         const matchesCategory =
           activeCategory === "all" || item.categoryId === activeCategory;
-        const matchesQuery =
-          productTitle(item, lang).toLowerCase().includes(query.toLowerCase()) ||
-          productDesc(item, lang).toLowerCase().includes(query.toLowerCase());
-        const matchesAvailability =
-          availability === "all" ||
-          (availability === "available" ? item.isAvailable : !item.isAvailable);
-        return matchesCategory && matchesQuery && matchesAvailability;
+        return matchesCategory;
       })
       .sort((a, b) => a.sortOrder - b.sortOrder);
-  }, [products, activeCategory, query, availability, lang]);
+  }, [products, activeCategory]);
 
   const heroSubtitle =
     lang === "fa"
@@ -155,31 +145,6 @@ export const MenuClient = ({
           >
             <p className="text-sm font-semibold uppercase text-muted">FOODO</p>
             <p className="mt-4 text-lg text-muted">{heroSubtitle}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder={lang === "fa" ? "جستجو در منو" : "Search menu"}
-                className="w-full rounded-full border border-brand/30 bg-card px-4 py-3 text-sm text-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30"
-              />
-              <select
-                value={availability}
-                onChange={(event) =>
-                  setAvailability(event.target.value as "all" | "available" | "out")
-                }
-                className="rounded-full border border-brand/30 bg-card px-4 py-3 text-sm text-ink"
-              >
-                <option value="all">
-                  {lang === "fa" ? "همه" : "All"}
-                </option>
-                <option value="available">
-                  {lang === "fa" ? "موجود" : "Available"}
-                </option>
-                <option value="out">
-                  {lang === "fa" ? "ناموجود" : "Out of stock"}
-                </option>
-              </select>
-            </div>
           </motion.div>
         </div>
       </section>

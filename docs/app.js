@@ -86,10 +86,6 @@ const i18n = {
     admin: "ادمین",
     heroTitle: "منوی پریمیوم FOODO",
     heroSubtitle: "کافه و فست‌فود با کیفیت ممتاز",
-    searchPlaceholder: "جستجو در منو",
-    all: "همه",
-    available: "موجود",
-    outOfStock: "ناموجود",
     highlight: "پیشنهاد ویژه امروز",
     highlightTitle: "لاته وانیل",
     highlightText: "تهیه شده با دانه‌های تازه عربیکا",
@@ -106,10 +102,6 @@ const i18n = {
     admin: "Admin",
     heroTitle: "FOODO Premium Menu",
     heroSubtitle: "Cafe and fast food with premium quality",
-    searchPlaceholder: "Search menu",
-    all: "All",
-    available: "Available",
-    outOfStock: "Out of stock",
     highlight: "Today’s highlight",
     highlightTitle: "Vanilla Latte",
     highlightText: "Crafted with fresh Arabica beans",
@@ -126,15 +118,12 @@ const state = {
   lang: "fa",
   theme: "night",
   category: "all",
-  query: "",
-  availability: "all"
+  query: ""
 };
 
 const categoryRow = document.getElementById("categoryRow");
 const productGrid = document.getElementById("productGrid");
 const itemsCount = document.getElementById("itemsCount");
-const searchInput = document.getElementById("searchInput");
-const availabilitySelect = document.getElementById("availabilitySelect");
 const langToggle = document.getElementById("langToggle");
 const themeToggle = document.getElementById("themeToggle");
 
@@ -151,9 +140,6 @@ const applyI18n = () => {
   document.documentElement.dir = state.lang === "fa" ? "rtl" : "ltr";
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     el.textContent = t(el.getAttribute("data-i18n"));
-  });
-  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-    el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
   });
   langToggle.textContent = state.lang === "fa" ? "EN" : "فا";
   if (themeToggle) {
@@ -227,14 +213,7 @@ const renderProducts = (products) => {
 const filterProducts = () => {
   return data.products.filter((item) => {
     const matchesCategory = state.category === "all" || item.categoryId === state.category;
-    const title = state.lang === "fa" ? item.titleFa : item.titleEn;
-    const desc = state.lang === "fa" ? item.shortDescFa : item.shortDescEn;
-    const matchesQuery =
-      title.toLowerCase().includes(state.query) || desc.toLowerCase().includes(state.query);
-    const matchesAvailability =
-      state.availability === "all" ||
-      (state.availability === "available" ? item.isAvailable : !item.isAvailable);
-    return matchesCategory && matchesQuery && matchesAvailability;
+    return matchesCategory;
   });
 };
 
@@ -245,16 +224,6 @@ const render = () => {
   const filtered = filterProducts();
   renderProducts(filtered);
 };
-
-searchInput.addEventListener("input", (event) => {
-  state.query = event.target.value.trim().toLowerCase();
-  render();
-});
-
-availabilitySelect.addEventListener("change", (event) => {
-  state.availability = event.target.value;
-  render();
-});
 
 langToggle.addEventListener("click", () => {
   state.lang = state.lang === "fa" ? "en" : "fa";

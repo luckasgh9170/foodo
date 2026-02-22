@@ -222,9 +222,11 @@ button {
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
-  margin: 40px 0 20px;
+  margin: 20px 0 20px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  padding: 6px 36px 10px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 
 .category-row::-webkit-scrollbar {
@@ -243,11 +245,41 @@ button {
   font-size: 14px;
   color: var(--ink);
   white-space: nowrap;
+  scroll-snap-align: start;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .category-row button.active {
   background: var(--primary);
   color: #0b0b0b;
+  box-shadow: 0 10px 30px rgba(255, 122, 0, 0.35);
+}
+
+.category-row button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 122, 0, 0.6);
+}
+
+.category-shell {
+  position: relative;
+}
+
+.category-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  pointer-events: none;
+}
+
+.category-fade.left {
+  left: 0;
+  background: linear-gradient(90deg, var(--surface) 0%, transparent 100%);
+}
+
+.category-fade.right {
+  right: 0;
+  background: linear-gradient(270deg, var(--surface) 0%, transparent 100%);
 }
 
 .section-head {
@@ -283,6 +315,12 @@ button {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(255, 122, 0, 0.2);
 }
 
 .card img {

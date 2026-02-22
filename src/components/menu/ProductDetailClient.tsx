@@ -116,7 +116,7 @@ export const ProductDetailClient = ({
               <Link
                 key={item.id}
                 href={`/product/${item.id}`}
-                className="group overflow-hidden rounded-3xl border border-brand/10 bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="group overflow-hidden rounded-3xl border border-brand/10 bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,122,0,0.2)]"
               >
                 <div className="relative h-40">
                   <Image

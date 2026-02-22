@@ -154,7 +154,7 @@ export const MenuClient = ({
 
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#f9efe7,#f7f2e9)]">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#1b1b1b,#0b0b0b)]">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-[1.2fr_0.8fr]">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -171,14 +171,14 @@ export const MenuClient = ({
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder={lang === "fa" ? "جستجو در منو" : "Search menu"}
-                className="w-full rounded-full border border-black/10 bg-white px-4 py-3 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-black/10"
+                className="w-full rounded-full border border-brand/30 bg-[#141414] px-4 py-3 text-sm text-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30"
               />
               <select
                 value={availability}
                 onChange={(event) =>
                   setAvailability(event.target.value as "all" | "available" | "out")
                 }
-                className="rounded-full border border-black/10 bg-white px-4 py-3 text-sm"
+                className="rounded-full border border-brand/30 bg-[#141414] px-4 py-3 text-sm text-ink"
               >
                 <option value="all">
                   {lang === "fa" ? "همه" : "All"}
@@ -199,7 +199,7 @@ export const MenuClient = ({
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="absolute -right-6 top-10 h-52 w-52 rounded-full bg-brand/20 blur-3xl" />
-            <div className="rounded-3xl bg-white p-6 shadow-xl">
+            <div className="rounded-3xl border border-brand/20 bg-[#141414] p-6 shadow-xl">
               <p className="text-sm text-muted">
                 {lang === "fa" ? "پیشنهاد ویژه امروز" : "Today’s highlight"}
               </p>
@@ -211,7 +211,7 @@ export const MenuClient = ({
                   ? "تهیه شده با دانه‌های تازه عربیکا"
                   : "Crafted with fresh Arabica beans"}
               </p>
-              <div className="mt-4 overflow-hidden rounded-2xl">
+              <div className="mt-4 overflow-hidden rounded-2xl border border-brand/20">
                 <Image
                   src="https://images.unsplash.com/photo-1517705008128-361805f42e86"
                   alt="Vanilla Latte"
@@ -226,12 +226,12 @@ export const MenuClient = ({
       </section>
 
       <section id="menu" className="mx-auto mt-10 max-w-6xl px-4">
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="no-scrollbar flex items-center gap-3 overflow-x-auto pb-2">
           <button
-            className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+            className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
               activeCategory === "all"
-                ? "bg-ink text-white"
-                : "border border-black/10 bg-white"
+                ? "bg-brand text-black"
+                : "border border-brand/30 bg-[#141414] text-ink"
             }`}
             onClick={() => setActiveCategory("all")}
           >
@@ -240,10 +240,10 @@ export const MenuClient = ({
           {visibleCategories.map((category) => (
             <button
               key={category.id}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+              className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
                 activeCategory === category.id
-                  ? "bg-ink text-white"
-                  : "border border-black/10 bg-white"
+                  ? "bg-brand text-black"
+                  : "border border-brand/30 bg-[#141414] text-ink"
               }`}
               onClick={() => setActiveCategory(category.id)}
             >
@@ -270,7 +270,7 @@ export const MenuClient = ({
               <Link
                 key={item.id}
                 href={`/product/${item.id}`}
-                className="group overflow-hidden rounded-3xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="group overflow-hidden rounded-3xl border border-brand/10 bg-[#141414] shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative h-44">
                   <Image
@@ -313,7 +313,7 @@ export const MenuClient = ({
             <Link
               key={item.id}
               href={`/product/${item.id}`}
-              className="group overflow-hidden rounded-3xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              className="group overflow-hidden rounded-3xl border border-brand/10 bg-[#141414] shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative h-44">
                 <Image
@@ -323,7 +323,7 @@ export const MenuClient = ({
                   className="object-cover transition duration-500 group-hover:scale-105"
                 />
                 {!item.isAvailable && (
-                  <span className="absolute left-4 top-4 rounded-full bg-red-500 px-3 py-1 text-xs font-semibold text-white">
+                  <span className="absolute left-4 top-4 rounded-full bg-[#b42318] px-3 py-1 text-xs font-semibold text-ink">
                     {lang === "fa" ? "ناموجود" : "Out of stock"}
                   </span>
                 )}
@@ -345,7 +345,7 @@ export const MenuClient = ({
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-brand/10 px-2 py-1 text-xs text-brand"
+                        className="rounded-full bg-brand/20 px-2 py-1 text-xs text-brand"
                       >
                         {tag}
                       </span>

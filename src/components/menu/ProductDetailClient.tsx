@@ -30,7 +30,7 @@ export const ProductDetailClient = ({
     <div className="mx-auto max-w-6xl px-4 py-12">
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <div className="overflow-hidden rounded-3xl bg-white shadow-lg">
+          <div className="overflow-hidden rounded-3xl border border-brand/15 bg-[#141414] shadow-lg">
             <Image
               src={activeImage}
               alt={title}
@@ -61,14 +61,14 @@ export const ProductDetailClient = ({
             {formatPrice(product.price, lang)}
           </div>
           {!product.isAvailable && (
-            <div className="mt-3 inline-flex rounded-full bg-red-500 px-3 py-1 text-xs font-semibold text-white">
+            <div className="mt-3 inline-flex rounded-full bg-[#b42318] px-3 py-1 text-xs font-semibold text-ink">
               {lang === "fa" ? "ناموجود" : "Out of stock"}
             </div>
           )}
           {desc && <p className="mt-6 text-sm text-muted">{desc}</p>}
 
           {(ingredients || allergens) && (
-            <div className="mt-6 rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
+            <div className="mt-6 rounded-3xl border border-brand/15 bg-[#141414] p-5 shadow-sm">
               {ingredients && (
                 <div>
                   <h3 className="text-sm font-semibold">
@@ -95,7 +95,7 @@ export const ProductDetailClient = ({
           <h2 className="text-2xl font-semibold">
             {lang === "fa" ? "نمای سه‌بعدی" : "3D View"}
           </h2>
-          <div className="mt-4 h-96 overflow-hidden rounded-3xl bg-white shadow-lg">
+          <div className="mt-4 h-96 overflow-hidden rounded-3xl border border-brand/15 bg-[#141414] shadow-lg">
             <ModelViewer url={product.model3dUrl} />
           </div>
         </section>
@@ -116,7 +116,7 @@ export const ProductDetailClient = ({
               <Link
                 key={item.id}
                 href={`/product/${item.id}`}
-                className="group overflow-hidden rounded-3xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="group overflow-hidden rounded-3xl border border-brand/10 bg-[#141414] shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative h-40">
                   <Image

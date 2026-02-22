@@ -72,7 +72,7 @@ export const CategoriesManager = () => {
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
-      <div className="rounded-3xl bg-white p-6 shadow-sm">
+      <div className="rounded-3xl border border-brand/15 bg-[#141414] p-6 shadow-sm">
         <h2 className="text-lg font-semibold">
           {editingId ? "Edit Category" : "New Category"}
         </h2>
@@ -84,7 +84,7 @@ export const CategoriesManager = () => {
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, titleFa: event.target.value }))
               }
-              className="mt-2 w-full rounded-2xl border border-black/10 px-4 py-3"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
             />
           </div>
           <div>
@@ -99,7 +99,7 @@ export const CategoriesManager = () => {
                   slug: prev.slug || slugify(titleEn),
                 }));
               }}
-              className="mt-2 w-full rounded-2xl border border-black/10 px-4 py-3"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
             />
           </div>
           <div>
@@ -109,7 +109,7 @@ export const CategoriesManager = () => {
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, slug: event.target.value }))
               }
-              className="mt-2 w-full rounded-2xl border border-black/10 px-4 py-3"
+              className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -124,7 +124,7 @@ export const CategoriesManager = () => {
                     sortOrder: Number(event.target.value),
                   }))
                 }
-                className="mt-2 w-full rounded-2xl border border-black/10 px-4 py-3"
+                className="mt-2 w-full rounded-2xl border border-brand/30 bg-[#0f0f0f] px-4 py-3 text-ink"
               />
             </div>
             <div className="flex items-center gap-3 pt-6">
@@ -141,19 +141,19 @@ export const CategoriesManager = () => {
           <button
             onClick={handleSave}
             disabled={loading}
-            className="w-full rounded-2xl bg-ink px-4 py-3 text-sm font-semibold text-white"
+            className="w-full rounded-2xl bg-brand px-4 py-3 text-sm font-semibold text-black"
           >
             {loading ? "Saving..." : editingId ? "Update" : "Create"}
           </button>
         </div>
       </div>
 
-      <div className="rounded-3xl bg-white p-6 shadow-sm">
+      <div className="rounded-3xl border border-brand/15 bg-[#141414] p-6 shadow-sm">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold">Categories</h2>
           <button
             onClick={load}
-            className="rounded-full border border-black/10 px-4 py-2 text-sm"
+            className="rounded-full border border-brand/30 px-4 py-2 text-sm text-ink"
           >
             Refresh
           </button>
@@ -162,7 +162,7 @@ export const CategoriesManager = () => {
           {categories.map((category) => (
             <div
               key={category.id}
-              className="flex items-center justify-between rounded-2xl border border-black/5 px-4 py-3"
+              className="flex items-center justify-between rounded-2xl border border-brand/10 bg-[#101010] px-4 py-3"
             >
               <div>
                 <p className="text-sm font-semibold">{category.titleEn}</p>
@@ -171,13 +171,13 @@ export const CategoriesManager = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => handleEdit(category)}
-                  className="rounded-full border border-black/10 px-3 py-1 text-xs"
+                  className="rounded-full border border-brand/30 px-3 py-1 text-xs text-ink"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => handleDelete(category.id)}
-                  className="rounded-full border border-red-200 px-3 py-1 text-xs text-red-600"
+                  className="rounded-full border border-red-400/40 px-3 py-1 text-xs text-red-300"
                 >
                   Delete
                 </button>

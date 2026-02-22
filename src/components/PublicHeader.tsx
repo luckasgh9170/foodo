@@ -51,39 +51,32 @@ export const PublicHeader = () => {
 
   const labels = {
     menu: lang === "fa" ? "منو" : "Menu",
-    admin: lang === "fa" ? "مدیریت" : "Admin",
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <header className="sticky top-0 z-40 border-b border-brand/20 bg-[#0b0b0b]/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
         <Link href="/" className="flex items-center gap-3">
           {settings.logoUrl ? (
             <div className="relative h-10 w-10 overflow-hidden rounded-2xl">
               <Image src={settings.logoUrl} alt="FOODO logo" fill />
             </div>
           ) : (
-            <div className="h-10 w-10 rounded-2xl bg-[linear-gradient(135deg,#c2422c,#f2b199)]" />
+            <div className="h-10 w-10 rounded-2xl bg-[linear-gradient(135deg,#ff7a00,#ffb266)]" />
           )}
           <div>
-            <p className="text-lg font-semibold tracking-[0.2em]">
+            <p className="text-lg font-semibold tracking-[0.2em] text-ink">
               {settings.restaurantName}
             </p>
             <p className="text-xs text-muted">Restaurant & Cafe</p>
           </div>
         </Link>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <Link
             href="#menu"
-            className="rounded-full border border-black/10 px-4 py-2 text-sm font-medium"
+            className="rounded-full border border-brand/30 px-4 py-2 text-sm font-medium text-ink transition hover:bg-brand/10"
           >
             {labels.menu}
-          </Link>
-          <Link
-            href="/admin"
-            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-white"
-          >
-            {labels.admin}
           </Link>
           <LanguageToggle />
         </div>

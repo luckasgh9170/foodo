@@ -3,5 +3,5 @@
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="min-h-screen bg-[#f6f2ed]">{children}</div>;
+  return <div className="min-h-screen bg-[#0b0b0b] text-ink">{children}</div>;
 }
